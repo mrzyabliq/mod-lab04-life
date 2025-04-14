@@ -119,10 +119,10 @@ namespace cli_life.Tests
             Assert.AreEqual("block", PatternRecognizer.Classify(components[0]));
         }
         [TestMethod]
-        public void T10_Recognize_Glider()
+        public void T10_Recognize_Hive()
         {
             var board = new Board(5, 5, 1, 0.0, false);
-            board.LoadBoard(Path.Combine(_testDataPath, "oval.txt"));
+            board.LoadBoard(Path.Combine(_testDataPath, "hive.txt"));
             var components = board.FindComponents();
             PatternRecognizer.LoadPatterns("TestData");
             Assert.AreEqual("hive", PatternRecognizer.Classify(components[0]));
@@ -137,13 +137,13 @@ namespace cli_life.Tests
             Assert.AreEqual("glider", PatternRecognizer.Classify(components[0]));
         }
         [TestMethod]
-        public void T12_Recognize_Glider()
+        public void T12_Recognize_Toad()
         {
             var board = new Board(5, 5, 1, 0.0, false);
-            board.LoadBoard(Path.Combine(_testDataPath, "hive.txt"));
+            board.LoadBoard(Path.Combine(_testDataPath, "toad.txt"));
             var components = board.FindComponents();
             PatternRecognizer.LoadPatterns("TestData");
-            Assert.AreEqual("hive", PatternRecognizer.Classify(components[0]));
+            Assert.AreEqual("toad", PatternRecognizer.Classify(components[0]));
         }
         [TestMethod]
         public void T13_Stability_StaticBlock()
